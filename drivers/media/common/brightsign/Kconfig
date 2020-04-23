@@ -1,0 +1,7 @@
+config VIDEO_BS_TV
+	tristate "BrightSign TV support"
+	depends on MEDIA_DIGITAL_TV_SUPPORT && I2C
+	select MEDIA_TUNER_XC5000
+	select DVB_LGDT3305
+	---help---
+	  This is a video4linux driver for BrightSign.

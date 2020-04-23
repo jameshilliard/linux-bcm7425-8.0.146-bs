@@ -1,0 +1,15 @@
+config BRIGHTSIGN_TETSUO_FPGA
+       bool "Enable BrightSign Tetsuo FPGA sound driver"
+       depends on SPI
+       depends on SOUND
+       default n
+
+config BRIGHTSIGN_GPIO_MUX
+       bool "Enable BrightSign GPIO alternate function multiplexing"
+       default n
+
+if PWM
+config BRIGHTSIGN_POE_LOAD
+       bool "Enable BrightSign Power over Ethernet load driver"
+       default y
+endif

@@ -1,0 +1,23 @@
+config TIME_DOCTOR
+        tristate "Enable Time Doctor output"
+	default n
+	help
+	  Collect information on tasks and interrupts
+
+config TIME_DOCTOR_SAMPLES
+	int "Number of Time Doctor samples to be stored"
+	depends on TIME_DOCTOR
+	default 131072
+	help
+	  Maximum number of time doctor samples to be stored
+
+config TIME_DOCTOR_PRESERVE_OVER_REBOOT
+        bool "Preserve contents of time doctor buffer over a reboot"
+	depends on TIME_DOCTOR = y
+	default n
+
+config TIME_DOCTOR_AUTO_START
+        bool "Automatically start time doctor in wrapping mode at boot"
+	depends on TIME_DOCTOR
+	default n
+
